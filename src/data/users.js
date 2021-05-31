@@ -1,0 +1,34 @@
+export let users = [
+    {
+        id:1,
+        firstName:"Fatih",
+        lastName:"Odacı",
+        age:18,
+        creditCardNumber:"12345",
+        type:"customer"
+    },
+    {
+        id:2,
+        firstName:"Çağlar",
+        lastName:"Alkış",
+        age:25,
+        creditCardNumber:"54321",
+        type:"customer"
+    },
+    {
+        id:3,
+        firstName:"Ozan",
+        lastName:"Özfırat",
+        age:30,
+        employeeNumber:"12345",
+        type:"employee"
+    },
+    {
+        id:4,
+        firstName:"Umut Cem",
+        lastName:"Avin",
+        age:20,
+        employeeNumber:"54321",
+        type:"employee"
+    }
+]
