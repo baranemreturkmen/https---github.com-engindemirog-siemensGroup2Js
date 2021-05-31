@@ -28,6 +28,13 @@ export class SmsService extends BaseLoggerService{
     }
 }
 
+export class FirebaseServiceAdapter extends BaseLoggerService{
+    log(data){
+        let firebaseService = new FirebaseService();
+        firebaseService.write(data);
+    }
+}
+
 
 //Bu kod node modules içinde
 export class FirebaseService{

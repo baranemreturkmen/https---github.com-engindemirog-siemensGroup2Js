@@ -1,10 +1,10 @@
 import { users } from "../data/users.js"
 
 export default class UserService{
-    constructor(loggerService){
+    constructor(loggerServices){
         this.customers = []
         this.employees = []
-        this.loggerService = loggerService
+        this.loggerServices = loggerServices
     }
 
     load(){
@@ -23,7 +23,7 @@ export default class UserService{
     }
 
     add(user){
-        this.loggerService.log(user)
+        this.runLoggers(this.loggerServices,user);
         switch (user.type) {
             case "customer":
                 this.customers.push(user)
@@ -33,6 +33,12 @@ export default class UserService{
                 break;            
             default:
                 break;
+        }
+    }
+
+    runLoggers(loggerServices,data){
+        for (const loggerService of loggerServices) {
+            loggerService.log(data)
         }
     }
 }
