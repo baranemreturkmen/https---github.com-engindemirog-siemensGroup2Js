@@ -1,5 +1,6 @@
 import { users } from "../data/users.js"
 import { DataError } from "../models/dataError.js"
+import Customer from "./models/customer.js"
 
 export default class UserService{
     constructor(loggerServices){
@@ -80,5 +81,21 @@ export default class UserService{
         for (const loggerService of loggerServices) {
             loggerService.log(data)
         }
+    }
+
+    getCustomerById(id){
+        return this.customers.find(c=>c.id===id)
+    }
+
+    getCustomersSortedByFirstName(){
+        return this.customers.sort((customer1,customer2)=>{
+            if(customer1.firstName<customer2.firstName){
+                return 1;
+            }else if(customer1.firstName>customer2.firstName){
+                return -1
+            }else{
+                return 0;
+            }
+        })
     }
 }
