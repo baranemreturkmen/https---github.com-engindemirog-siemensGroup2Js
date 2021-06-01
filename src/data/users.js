@@ -3,7 +3,7 @@ export let users = [
         id:1,
         firstName:"Fatih",
         lastName:"Odacı",
-        age:18,
+        age:"18",
         creditCardNumber:"12345",
         type:"customer"
     },
