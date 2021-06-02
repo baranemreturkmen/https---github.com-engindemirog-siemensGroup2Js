@@ -4,6 +4,7 @@ import { ProductFactory, settings } from "./factory/factory.js";
 import Api from "./singleton/singleton.js";
 
 import {TaskServiceManager} from "./facade/facade.js"
+import { Book, BookService, giftWrap } from "./decorator/decorator.js";
 
 let factory = new ProductFactory();
 
@@ -32,4 +33,12 @@ let taskManager = new TaskServiceManager(task1);
 taskManager.completeAndNotify();
 
 
+let book1 = new Book("Sefiller","Victor Hugo",23)
+
+let bookService = new BookService(book1);
+
+ giftWrap(bookService)
+
+console.log(bookService.getDetailsWhenGiftWrapped())
+//console.log(bookService.getDetails());
 
