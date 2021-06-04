@@ -5,6 +5,8 @@ import Api from "./singleton/singleton.js";
 
 import {TaskServiceManager} from "./facade/facade.js"
 import { Book, BookService, giftWrap } from "./decorator/decorator.js";
+import {TrafficLight} from "./state/state.js"
+
 
 let factory = new ProductFactory();
 
@@ -42,3 +44,19 @@ let bookService = new BookService(book1);
 console.log(bookService.getDetailsWhenGiftWrapped())
 //console.log(bookService.getDetails());
 
+
+const trafficLight = new TrafficLight();
+
+console.log(trafficLight.sign())
+
+trafficLight.change();
+console.log(trafficLight.sign())
+
+trafficLight.change();
+console.log(trafficLight.sign())
+
+trafficLight.change();
+console.log(trafficLight.sign())
+
+trafficLight.change();
+console.log(trafficLight.sign())

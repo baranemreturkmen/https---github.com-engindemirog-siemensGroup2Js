@@ -28,6 +28,4 @@ export function giftWrap(bookService) {
     bookService.getDetailsWhenGiftWrapped = ()=>{
         return `${bookService.getBook().title} : ${bookService.getBook().author} : giftWrapped`
     }
-
-    //return bookService;
 }
